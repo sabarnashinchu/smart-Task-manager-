@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap');
+
+body, .main-bg {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f7971e 0%, #ffd200 100%);
+  font-family: 'Montserrat', sans-serif;
+  transition: background 0.5s;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.main-card {
+  background: rgba(255,255,255,0.95);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  border-radius: 24px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  will-change: transform;
+  animation: slideUp 0.5s ease-in-out;
+}
+.main-card:hover {
+  transform: scale(1.02) translateY(-4px);
+  box-shadow: 0 16px 40px 0 rgba(31, 38, 135, 0.18);
+}
+
+.floating-card {
+  animation: floatCard 3s ease-in-out infinite alternate;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+@keyframes floatCard {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-10px); }
+}
+
+.floating-card:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  transform: translateY(-4px);
+}
+
+.welcome-banner {
+  text-align: center;
+  margin-bottom: 8px;
+  padding: 0 12px;
+  max-width: 100%;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.typewriter {
+  display: inline-block;
+  overflow: hidden;
+  border-right: .15em solid #f7971e;
+  white-space: nowrap;
+  letter-spacing: .08em;
+  animation: typing 2.2s steps(30, end), blink-caret .75s step-end infinite;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #f7971e;
+  max-width: 100%;
+}
+.typewriter .emoji {
+  display: inline-block;
+  margin-left: 4px;
+  vertical-align: middle;
+}
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #f7971e; }
+}
+
+.animated-quote {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #ff9100;
+  margin-bottom: 18px;
+  min-height: 28px;
+  animation: fadeInQuote 1s;
+}
+@keyframes fadeInQuote {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animated-input {
+  transition: all 0.2s ease;
+}
+.animated-input:focus-within {
+  transform: scale(1.01);
+}
+
+.animated-btn {
+  background: linear-gradient(90deg, #f7971e 0%, #ffd200 100%);
+  color: #fff;
+  font-weight: bold;
+  letter-spacing: 1px;
+  box-shadow: 0 2px 8px #f7971e33;
+  transition: all 0.2s ease;
+}
+.animated-btn:hover {
+  background: linear-gradient(90deg, #ffd200 0%, #f7971e 100%);
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.animated-list {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.animated-list-item {
+  animation: slideInRight 0.3s ease-in-out;
+}
+
+.no-tasks-animation {
+  animation: pulse 2s infinite ease-in-out;
+  text-align: center;
+}
+.no-tasks-animation svg {
+  animation: swing 1.5s infinite alternate;
+  color: #f7971e;
+}
+@keyframes bounceIn {
+  0% { transform: scale(1) translateY(0); }
+  100% { transform: scale(1.05) translateY(-10px); }
+}
+@keyframes swing {
+  0% { transform: rotate(-8deg); }
+  100% { transform: rotate(8deg); }
+}
+@keyframes pulse {
+  0% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.7;
+  }
+}
+
+.confetti-anim {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+/* Custom scrollbar for the task list */
+.animated-list::-webkit-scrollbar {
+  width: 8px;
+}
+.animated-list::-webkit-scrollbar-thumb {
+  background: #ffd200;
+  border-radius: 4px;
+}
+
+/* Keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  .main-card {
+    border-radius: 12px;
+    padding: 16px !important;
+  }
+} 
