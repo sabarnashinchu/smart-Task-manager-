@@ -1,6 +1,8 @@
 # Task Manager Application
 
 A full-stack task management application built with React and Spring Boot, designed to help users organize, track, and analyze their tasks efficiently.
+## video available :
+https://github.com/sabarnashinchu/smart-Task-manager-/issues/1#issue-3057643965
 
 ## Features
 
